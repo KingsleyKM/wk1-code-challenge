@@ -1,3 +1,4 @@
+// defining the function gradeGenerator
 function gradeGenerator(grade){
     if(grade < 40){
         return "E"
@@ -18,4 +19,5 @@ function gradeGenerator(grade){
         return "Enter valid grade"
     }
 }
+// calling the function
 gradeGenerator();

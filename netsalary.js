@@ -25,10 +25,14 @@
 // }
 // netSalary();
 
+
+
+// let the person enter their basic salary and allowances
 const basicSalary = parse.float(prompt("Enter your basic salary : "))
 const allowances = parse.float(prompt("Enter you allowances : "))
-
+ // calcutating the nhifdeductions
 const afterNhifDeductions = function (){
+    // conditional statement for where the it returns a value depending on the amount of the grossSalary
     if (grossSalary < 6000){return (grossSalary-150)}
     else if (grossSalary >= 6000 && grossSalary < 8000){return (grossSalary-300)}
     else if (grossSalary >= 8000 && grossSalary < 12000){return (grossSalary-400)}
@@ -48,6 +52,7 @@ const afterNhifDeductions = function (){
     else if (grossSalary >= 100000){return (grossSalary-1700)}
     else if (grossSalary  < 0 ){return ("invalid value")}
 }
+// calculating the monthly payed deductions 
 const MonthlypayeDeductions = function (){
     if(grossSalary <= 24000){return (grossSalary * 0.1)}
     else if(grossSalary > 24000 && grossSalary < 32334){return (grossSalary * 0.25)}
@@ -55,10 +60,11 @@ const MonthlypayeDeductions = function (){
     else if(grossSalary > 500000 && grossSalary <= 800000){return (grossSalary * 0.325)}
     else if(grossSalary > 800000){return (grossSalary * 0.35)}
 }
+// calculate nssfDeductions 
 const nssfDeduction = function(){
     if(grossSalary >= 1 && grossSalary <= 6000){return grossSalary * 0.06}
     else if (grossSalary >= 6001){return grossSalary * 0.06}
-
+// subtracting monthly payed ddeductions and nssf deductions from the reamainder left from removing the nhif deductions
     return (afterNhifDeductions() - MonthlypayeDeductions() - nssfDeduction());
 }
 netsalary();
